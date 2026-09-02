@@ -5,126 +5,132 @@
 <h1 align="center">Quantum</h1>
 
 <p align="center">
-  Быстрый локальный редактор заметок и база знаний для Windows.<br>
-  Ваши записи — обычные markdown-файлы в папке на диске.
+  A fast local notes editor and knowledge base for Windows.<br>
+  Your writing stays as plain markdown files in a folder on your disk.
 </p>
 
 <p align="center">
-  <a href="https://github.com/Freaction/Quantum-release/releases/latest">Скачать последнюю версию</a>
+  <a href="https://github.com/Freaction/Quantum-release/releases/latest">Download the latest version</a>
+</p>
+
+<p align="center">
+  <b>English</b> · <a href="README.ru.md">Русский</a>
 </p>
 
 ---
 
-## Что это
+## What it is
 
-Quantum — десктопное приложение для личной базы знаний: заметки, ссылки между ними,
-поиск, чтение книг и работа с метаданными. Никакого облака и аккаунта: приложение
-открывает выбранную вами папку и работает с лежащими в ней `.md` файлами напрямую.
-Файлы остаются читаемыми любым другим редактором, а если Quantum вам разонравится —
-заметки никуда не денутся и не потребуют экспорта.
+Quantum is a desktop app for a personal knowledge base: notes, links between them,
+search, book reading and structured metadata. There is no cloud and no account —
+the app opens a folder you choose and works with the `.md` files inside it directly.
+Those files stay readable in any other editor, so if Quantum ever stops suiting you,
+your notes are already where you need them and require no export.
 
-Приложение собрано на Tauri: интерфейс на React, вся работа с диском, индексом и
-поиском — на Rust. Отсюда и главное свойство — скорость: открытие заметки, поиск и
-переключение вкладок должны быть мгновенными на базе любого размера.
+The app is built on Tauri: the interface is React, while everything touching the disk,
+the index and search runs in Rust. That is where its main property comes from — speed.
+Opening a note, searching and switching tabs are meant to feel instant on a vault of
+any size.
 
-## Возможности
+## Features
 
-**Редактор**
+**Editor**
 
-- Живой предпросмотр markdown: разметка видна только там, где стоит каретка, остальной текст выглядит как готовый документ.
-- Таблицы с объединением ячеек, перетаскиванием строк и колонок, изменением ширины.
-- Изображения и видео прямо в тексте, вставка перетаскиванием в папку хранилища.
-- Блоки кода с подсветкой, цитаты, callout-блоки, списки с перемещением по Alt+стрелкам.
-- Метаданные (frontmatter) сворачиваются в аккуратный блок и редактируются как поля.
-- Шаблоны заметок: свои заготовки для новых страниц.
+- Live markdown preview: syntax is only visible where the caret is, the rest of the text reads as a finished document.
+- Tables with merged cells, drag-to-reorder rows and columns, resizable widths.
+- Images and video inline, added by dropping files into the vault.
+- Code blocks with highlighting, quotes, callouts, and lists you can move with Alt+arrows.
+- Frontmatter collapses into a tidy block and is edited as a set of fields.
+- Note templates: your own starting points for new pages.
 
-**Связи и навигация**
+**Links and navigation**
 
-- Вики-ссылки `[[Заметка]]`, обратные ссылки и список исходящих связей.
-- Граф связей, который обновляется вместе с правками.
-- Вкладки, история переходов «назад/вперёд», оглавление документа.
-- Несколько хранилищ: каждая папка со своим индексом, переключение без перемешивания данных.
+- Wiki links `[[Note]]`, backlinks and a list of outgoing links.
+- A link graph that updates as you edit.
+- Tabs, back/forward history, and a document outline.
+- Multiple vaults: each folder gets its own index, and switching never mixes their data.
 
-**Поиск**
+**Search**
 
-- Полнотекстовый поиск по всей базе на движке Tantivy — результаты появляются во время набора.
-- Поиск по открытой странице с подсветкой совпадений.
-- Поля метаданных лежат в индексе типизированными, поэтому выборки по ним быстрые.
+- Full-text search across the vault powered by Tantivy — results appear as you type.
+- In-page search with highlighted matches.
+- Metadata fields are stored in the index as typed values, which keeps queries over them fast.
 
-**Запросы к базе**
+**Querying the vault**
 
-Блок ```` ```dataview ```` собирает таблицы и списки заметок по условиям: `TABLE` и `LIST`
-с частями `FROM`, `WHERE`, `SORT`, `LIMIT`, полями файла и набором функций. Синтаксис
-снаружи повторяет DQL из Obsidian, чтобы запросы переносились без переписывания, а
-считается всё на стороне Rust.
+A ```` ```dataview ```` block builds tables and lists of notes from conditions: `TABLE` and
+`LIST` with `FROM`, `WHERE`, `SORT` and `LIMIT` clauses, file fields and a set of functions.
+The syntax follows Obsidian's DQL from the outside so existing queries carry over without
+rewriting, while parsing and execution happen entirely in Rust.
 
-**Книги**
+**Books**
 
-- Встроенная читалка EPUB, MOBI, AZW3 и FB2 — файл лежит в том же хранилище.
-- Страница книги с обложкой, автором, статусом и прогрессом чтения.
-- Выделенный в читалке фрагмент отправляется цитатой в заметку.
+- A built-in reader for EPUB, MOBI, AZW3 and FB2 files kept in the same vault.
+- A book page with cover, author, status and reading progress.
+- Text selected in the reader goes into the note as a quote.
 
-**Оформление и вывод**
+**Appearance and output**
 
-- Светлая и тёмная темы, настройка шрифтов и масштаба интерфейса.
-- Обложки страниц и миниатюры.
-- Экспорт заметки в PDF формата A4 — тем же оформлением, что и на экране.
-- Русский и английский интерфейс.
+- Light and dark themes, adjustable fonts and interface scale.
+- Page covers and book thumbnails.
+- Export a note to an A4 PDF that matches what you see on screen.
+- Russian and English interface.
 
-**Для агентов**
+**For AI agents**
 
-Встроенный MCP-сервер даёт ИИ-агентам доступ к базе: чтение, поиск, создание и правку
-заметок, работу со ссылками и метаданными. Правки агента и ваш ввод сливаются, а не
-затирают друг друга: документ живёт в CRDT-модели, поэтому текст под кареткой не
-теряется, пока агент пишет в тот же файл.
+A built-in MCP server gives agents access to the vault: reading, searching, creating and
+editing notes, following links and working with metadata. An agent's edits and your own
+typing merge instead of overwriting each other — the document lives in a CRDT model, so
+text under your caret survives while an agent writes to the same file.
 
-## Установка
+## Installation
 
-1. Откройте [последний релиз](https://github.com/Freaction/Quantum-release/releases/latest).
-2. Скачайте `quantum-app_<версия>_x64-setup.exe`.
-3. Запустите установщик.
+1. Open the [latest release](https://github.com/Freaction/Quantum-release/releases/latest).
+2. Download `quantum-app_<version>_x64-setup.exe`.
+3. Run the installer.
 
-Приложение ставится в профиль пользователя и не просит прав администратора.
-Установщик не подписан сертификатом Windows, поэтому SmartScreen может показать
-предупреждение — «Подробнее» → «Выполнить в любом случае».
+The app installs into your user profile and does not ask for administrator rights.
+The installer is not signed with a Windows certificate, so SmartScreen may warn you —
+choose "More info" → "Run anyway".
 
-При первом запуске выберите папку под хранилище: пустую для новой базы или уже
-существующую с вашими markdown-файлами.
+On first launch, pick a folder for your vault: an empty one for a fresh start, or an
+existing folder that already holds your markdown files.
 
-## Обновления
+## Updates
 
-Quantum обновляется сам. При запуске приложение сверяется с этим репозиторием, и если
-вышла новая версия — скачивает и ставит её, показывая ход загрузки, после чего
-перезапускается. Все обновления подписаны ключом разработчика и проверяются до
-установки. Если сети нет, приложение просто запускается как обычно.
+Quantum updates itself. On launch it checks this repository, and if a newer version is
+out, it downloads and installs it while showing the progress, then restarts. Every update
+is signed with the developer key and verified before installation. With no network
+connection the app simply starts as usual.
 
-Ставить новую версию поверх старой руками не нужно.
+There is no need to install a new version over the old one by hand.
 
-## Требования
+## Requirements
 
-- Windows 10 или 11, 64-разрядная.
-- WebView2 — он есть в системе по умолчанию, а если нет, установщик его дотянет.
+- Windows 10 or 11, 64-bit.
+- WebView2 — present on the system by default, and the installer pulls it in if it is missing.
 
-Сборки для macOS и Linux пока не выпускаются.
+macOS and Linux builds are not published yet.
 
-## Ваши данные
+## Your data
 
-Всё лежит у вас на диске:
+Everything lives on your disk:
 
-- заметки — `.md` файлы в выбранной папке, ровно там, где вы их видите;
-- вложения — в папке хранилища рядом с заметками;
-- поисковый индекс, позиции прокрутки и закладки читалки — служебные кэши, которые
-  всегда можно удалить: они соберутся заново из ваших файлов.
+- notes — `.md` files in the folder you chose, exactly where you see them;
+- attachments — inside the vault folder next to the notes;
+- the search index, scroll positions and reader bookmarks — service caches you can always
+  delete: they are rebuilt from your files.
 
-Приложение ничего не отправляет на сервер. В сеть оно ходит только за обновлением и —
-если вы сами включите анализ источников — за статьями Wikipedia.
+The app sends nothing to a server. It reaches the network only for updates and — if you
+turn source analysis on yourself — for Wikipedia articles.
 
-## Обратная связь
+## Feedback
 
-Ошибки и пожелания — во вкладке [Issues](https://github.com/Freaction/Quantum-release/issues).
-Полезно указать версию приложения и что происходило перед сбоем.
+Bugs and suggestions go to [Issues](https://github.com/Freaction/Quantum-release/issues).
+It helps to include the app version — Settings → System → About — and what you were doing
+before things went wrong.
 
-## Об этом репозитории
+## About this repository
 
-Здесь публикуются только готовые сборки и манифест автообновления. Исходный код
-приложения лежит в отдельном закрытом репозитории.
+Only finished builds and the auto-update manifest are published here. The application
+source code lives in a separate private repository.
