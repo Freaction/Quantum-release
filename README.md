@@ -32,6 +32,60 @@ the index and search runs in Rust. That is where its main property comes from �
 Opening a note, searching and switching tabs are meant to feel instant on a vault of
 any size.
 
+## How it looks
+
+**The home page: your vault at a glance**
+
+A ```` ```dataview ```` block builds live tables right inside a note — recent entries, how much
+of the day, month and year is gone, how many notes you wrote this week compared to the last one.
+Everything is computed inside the app, with no plugins and no JavaScript.
+
+![Home page](screenshots/home.jpg)
+
+**The graph of links**
+
+Every note and every link on one canvas — 835 notes and 1487 links here. Node size, spacing,
+highlight depth and a heat map by date are adjustable while you look at it.
+
+![Graph](screenshots/graph.jpg)
+
+**Tasks**
+
+Checkboxes are real: click one and the task closes in the text. A `TASK` query gathers open
+items from the entire vault into a single block, wherever they were written.
+
+![Tasks](screenshots/tasks.jpg)
+
+**Books and the reader**
+
+A book page keeps the cover, the author and reading progress; "Read" opens the built-in reader
+with two columns, justified text and hyphenation. Your position and quotes are saved back into
+the note.
+
+![Books](screenshots/books.jpg)
+
+![Reader](screenshots/reader.jpg)
+
+**Links, backlinks and relevance**
+
+Wiki links, a list of notes pointing here, and a sidebar that suggests what else is worth
+opening: BM25F ranks by wording, Adamic–Adar by the shape of the link graph.
+
+![Backlinks](screenshots/links.jpg)
+
+**Tables and lists**
+
+A markdown table behaves like a spreadsheet — drag rows and columns, merge cells, keep links
+alive inside them. Lists support nesting, numbering and colored callouts.
+
+![Tables](screenshots/tables.jpg)
+
+**Settings**
+
+Fonts, sizes, line height and column width — separately for the editor and for the reader.
+
+![Settings](screenshots/settings.jpg)
+
 ## Features
 
 **Editor**
